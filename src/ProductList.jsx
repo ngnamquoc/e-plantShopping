@@ -20,11 +20,11 @@ function ProductList() {
     cart.forEach((item) => {
       count += item.quantity;
     });
-    console.log(count);
+    // console.log(count);
 
     return count;
   };
-  console.log("item count", itemCount());
+//   console.log("item count", itemCount());
 
   const plantsArray = [
     {

@@ -29,7 +29,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleIncrement = (item) => {
-    console.log(item);
+    // console.log(item);
 
     const newQuantity = item.quantity + 1;
     dispatch(updateQuantity({ name: item.name, quantity: newQuantity }));
@@ -37,11 +37,14 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleDecrement = (item) => {
     //check to avoid decreament to negative value
-    if (item.quantity > 0) {
-      const newQuantity = item.quantity - 1;
+    const newQuantity = item.quantity - 1;
+    // console.log(newQuantity);
+
+    if (newQuantity > 0) {
       dispatch(updateQuantity({ name: item.name, quantity: newQuantity }));
-    } 
+    }else if(newQuantity ==0){
       dispatch(removeItem(item.name));
+    } 
     
   };
 
@@ -53,7 +56,7 @@ const CartItem = ({ onContinueShopping }) => {
   const calculateTotalCost = (item) => {
     let itemCost = parseFloat(item.cost.replace("$", ""));
 
-    console.log("calculateTotalCost", itemCost);
+    // console.log("calculateTotalCost", itemCost);
 
     const subtotal = item.quantity * itemCost;
     return subtotal;

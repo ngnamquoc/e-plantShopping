@@ -261,8 +261,8 @@ body {
 
   .cart-badge {
     position: absolute;
-    top: 50%; 
-    left: 50%; 
+    top: 20%; 
+    left: 40%; 
     font-size: 2rem;
   
   }
